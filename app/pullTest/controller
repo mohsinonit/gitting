@@ -1,0 +1,52 @@
+<<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class HomeController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('backend.dashboard');
+    }
+    public function tenant()
+    {
+        return view('backend.tenants');
+    }
+    public function finder()
+    {
+        return view('backend.finder');
+    }
+    public function userProfile()
+    {
+        return view('backend.userProfile');
+    }
+    public function billing()
+    {
+        return view('backend.billing');
+    }
+    public function invoice()
+    {
+        return view('backend.invoice');
+    }
+    public function addTenant()
+    {
+        return view('backend.addTenant');
+    }
+}
